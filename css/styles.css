@@ -10986,8 +10986,8 @@ html {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
-    padding-bottom: 6rem;
+    padding-top: calc(1rem + 70px);
+    padding-bottom: 1rem;
   }
   .masthead .masthead-heading {
     font-size: 4rem;
@@ -11039,7 +11039,7 @@ html {
 .footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #2c3e50;
+  background-color: #FF0000;
   color: #fff;
 }
 
@@ -11075,4 +11075,59 @@ body {
   width: 100%; /* A imagem ocupa toda a largura do container */
   height: 100%; /* A imagem ocupa toda a altura do container */
   object-fit: cover; /* Cobre o espaço do container mantendo a proporção da imagem */
+}
+
+.pic-product {
+  width: 100%; /* Preenche toda a largura do contêiner */
+  height: 150px; /* Altura fixa para alinhar o tamanho das imagens */
+  object-fit: contain; /* Ajusta a imagem para preencher o contêiner sem distorcer */
+  border-radius: 5px;
+}
+
+.img-products {
+  display: flex;
+  flex-direction: wrap;
+  gap: 20px; /* Espaçamento entre os itens */
+  justify-content: center; /* Centraliza os produtos horizontalmente */
+  margin: 3%;
+}
+
+.product-image {
+  width: 200px; /* Largura fixa para o contêiner */
+  height: 280px; /* Altura fixa para o contêiner */
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras uniformes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff; /* Fundo branco para uniformidade */
+}
+
+.product-image a {
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Mantém a cor do texto */
+}
+
+.product-image h5 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.price {
+  margin-top: 5px;
+  font-size: 18px;
+  color: var(--bs-red); /* Cor para destacar o preço */
+  font-weight: bold;
 }
