@@ -1279,10 +1279,7 @@ progress {
     flex: 0 0 auto;
     width: 25%;
   }
-  .col-lg-4 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
-  }
+  
   .col-lg-5 {
     flex: 0 0 auto;
     width: 41.66666667%;
@@ -11036,13 +11033,6 @@ html {
   }
 }
 
-.footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: #FF0000;
-  color: #fff;
-}
-
 .copyright {
   background-color: #1a252f;
 }
@@ -11130,4 +11120,34 @@ body {
   font-size: 18px;
   color: var(--bs-red); /* Cor para destacar o preço */
   font-weight: bold;
+}
+
+.texte-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0; /* ajuste conforme necessário */
+}
+
+.footer-horizontal .col-lg-4 {
+  flex: 1; /* Permite que as colunas ocupem o mesmo espaço */
+  text-align: center; /* Alinha o texto ao centro */
+}
+
+.footer {
+  padding-bottom: 5rem;
+  background-color: #FF0000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0; /* ajuste conforme necessário */
+}
+
+.footer .row {
+  flex: 1; /* Permite que as colunas ocupem o mesmo espaço */
+}
+
+.footer h4 {
+  margin-bottom: 1rem; /* Ajuste a margem se necessário */
 }
