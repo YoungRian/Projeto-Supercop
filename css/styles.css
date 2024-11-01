@@ -488,7 +488,7 @@ progress {
 }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -11144,8 +11144,8 @@ body {
   display: flex;
   flex-direction: row; /* Alinha os itens horizontalmente */
   justify-content: space-between; /* Espaça uniformemente as colunas */
-  align-items: center; /* Alinha verticalmente */
-  text-align: center;
+  align-items: left; /* Alinha verticalmente */
+  text-align: left;
   gap: 20px; /* Espaçamento opcional entre as colunas */
 }
 
@@ -11155,4 +11155,19 @@ body {
 
 .footer h4 {
   margin-bottom: 1rem; /* Ajuste a margem do título, se necessário */
+}
+
+.social-media {
+    position: fixed;
+    top: 30px; /* Distância do topo da tela */
+    right: 30px; /* Distância da borda direita da tela */
+    z-index: 1000; /* Certifica que fique acima de outros elementos */
+}
+
+.social-media .btn {
+    margin: 5px; /* Espaçamento entre os botões */
+}
+
+.footer-content {
+  padding: 50px; /* Ajuste o valor conforme necessário */
 }
