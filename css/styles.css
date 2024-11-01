@@ -11135,19 +11135,24 @@ body {
 }
 
 .footer {
-  padding-bottom: 5rem;
+  padding: 20px 0;
   background-color: #FF0000;
   color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0; /* ajuste conforme necessário */
 }
 
 .footer .row {
-  flex: 1; /* Permite que as colunas ocupem o mesmo espaço */
+  display: flex;
+  flex-direction: row; /* Alinha os itens horizontalmente */
+  justify-content: space-between; /* Espaça uniformemente as colunas */
+  align-items: center; /* Alinha verticalmente */
+  text-align: center;
+  gap: 20px; /* Espaçamento opcional entre as colunas */
+}
+
+.footer .col-lg-4 {
+  flex: 1; /* Garante que cada coluna ocupe o mesmo espaço */
 }
 
 .footer h4 {
-  margin-bottom: 1rem; /* Ajuste a margem se necessário */
+  margin-bottom: 1rem; /* Ajuste a margem do título, se necessário */
 }
