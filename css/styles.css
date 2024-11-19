@@ -10906,7 +10906,7 @@ html {
   color: #fff;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: #1abc9c;
+  color: black;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
   color: #fff;
@@ -11136,6 +11136,7 @@ body {
 
 .footer {
   padding: 20px 0;
+  text-decoration: none;
   background-color: #FF0000;
   color: #fff;
 }
@@ -11158,10 +11159,8 @@ body {
 }
 
 .social-media {
-    position: fixed;
-    top: 30px; /* Distância do topo da tela */
-    right: 30px; /* Distância da borda direita da tela */
-    z-index: 1000; /* Certifica que fique acima de outros elementos */
+    position: relative;
+    left: 500px;
 }
 
 .social-media .btn {
