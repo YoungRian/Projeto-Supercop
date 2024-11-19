@@ -11170,3 +11170,14 @@ body {
 .footer-content {
   padding: 50px; /* Ajuste o valor conforme necessário */
 }
+
+.contact {
+  text-align: center;
+}
+
+.side-text {
+  background-color: #e9ecef; /* Cor de fundo cinza mais escuro */
+  padding: 45px;
+  border-radius: 15px;
+  margin-top: 0px;
+}
