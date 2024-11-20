@@ -11171,13 +11171,69 @@ body {
   padding: 50px; /* Ajuste o valor conforme necessário */
 }
 
+.side-contact {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 15px;
+  margin-left: 20px;
+}
+
 .contact {
-  text-align: center;
+  background-color: #fff;
+  text-align: left;
+  padding: 20px;
+  border-radius: 15px;
+  margin-inline: 290px;
+  width: 300px;
 }
 
 .side-text {
   background-color: #e9ecef; /* Cor de fundo cinza mais escuro */
-  padding: 45px;
+  padding: 85px;
   border-radius: 15px;
-  margin-top: 0px;
+  margin-right: 20px;
+}
+
+.text-title-contact {
+  text-align: center;
+  font-weight: normal;
+  margin: 20px;
+}
+
+label {
+  display: block; /* Faz o rótulo ocupar uma linha inteira */
+  margin-bottom: 5px; /* Espaço entre o rótulo e o campo */
+  font-weight: bold; /* Destaca o rótulo */
+}
+
+input {
+  width: 100%; /* Faz as caixas ocuparem toda a largura do contêiner */
+  height: 40px; /* Altura fixa para as caixas */
+  padding: 15px; /* Espaço interno */
+  border: 1px solid #ccc; /* Bordas leves */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 16px; /* Tamanho do texto */
+  box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
+}
+
+textarea {
+  width: 100%; /* Faz as caixas ocuparem toda a largura do contêiner */
+  height: 90px; /* Altura fixa para as caixas */
+  padding: 15px; /* Espaço interno */
+  border: 1px solid #ccc; /* Bordas leves */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 16px; /* Tamanho do texto */
+  box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
+  /*resize: none; /* Evita que o usuário redimensione (Opcional) */
+}
+
+.button {
+  background-color: #2b2b28;
+  color: white;
+  width: 100%; /* Faz as caixas ocuparem toda a largura do contêiner */
+  height: 40px; /* Altura fixa para as caixas */
+  border: 1px solid #ccc; /* Bordas leves */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 16px; /* Tamanho do texto */
+  box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
 }
