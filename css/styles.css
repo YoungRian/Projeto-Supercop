@@ -246,11 +246,12 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
-  text-decoration: underline;
+  color: #000000; /* Azul padrão */
+  text-decoration: underline; /* Sublinhado no texto do link */
 }
+
 a:hover {
-  color: var(--bs-link-hover-color);
+  color: #9b9800; /* Azul mais escuro ao passar o mouse */
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -11236,4 +11237,19 @@ textarea {
   border-radius: 8px; /* Bordas arredondadas */
   font-size: 16px; /* Tamanho do texto */
   box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
+}
+
+.img-loja {
+  margin-left: 20px;
+  display: flex; /* Alinha os itens horizontalmente */
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 20px; /* Espaço entre as lojas */
+  padding: 20px;
+}
+
+.text-loja {
+  text-decoration: none; /* Remove a linha do link */
+  color: #000; /* Cor padrão do link */
+  font-weight: bold; /* Negrito no link */
 }
