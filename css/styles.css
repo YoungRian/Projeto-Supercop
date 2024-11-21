@@ -11253,3 +11253,33 @@ textarea {
   color: #000; /* Cor padrão do link */
   font-weight: bold; /* Negrito no link */
 }
+
+.content {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente as caixas */
+  gap: 20px; /* Espaço entre os itens */
+}
+
+.side-moments {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  margin: 15px;
+}
+
+.text-moments {
+  text-decoration: none; /* Remove a linha do link */
+  color: #000; /* Cor padrão do link */
+  font-weight: bold; /* Negrito no link */
+  margin-top: 30px;
+}
+
+.img-moments {
+  margin-left: 20px;
+  display: flex; /* Alinha os itens horizontalmente */
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 20px; /* Espaço entre as lojas */
+  padding: 20px;
+}
