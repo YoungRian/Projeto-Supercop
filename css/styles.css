@@ -11056,12 +11056,14 @@ body {
   margin: 0; /* Remove a margem padrão do corpo */
 }
 .imagem-central {
-  width: calc(100% - 140px); /* Ajusta a largura da imagem */
-  height: calc(100vh - 140px); /* Ajusta a altura da imagem */
+  width: calc(100% - 700px); /* Ajusta a largura da imagem */
   margin: 70px; /* Define a margem para afastar das bordas */
   border-radius: 15px; /* Define o arredondamento das pontas */
   overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites */
+  height: auto; /* mantém a proporção */
+  margin-left: 300px;
 }
+
 .imagem-central img {
   width: 100%; /* A imagem ocupa toda a largura do container */
   height: 100%; /* A imagem ocupa toda a altura do container */
@@ -11282,4 +11284,63 @@ textarea {
   justify-content: center; /* Centraliza os itens horizontalmente */
   gap: 20px; /* Espaço entre as lojas */
   padding: 20px;
+}
+
+.texto-central {
+  width: calc(100% - 140px); /* Ajusta a largura da imagem */
+  margin: 20px; /* Define a margem para afastar das bordas */
+  border-radius: 15px; /* Define o arredondamento das pontas */
+  overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites */
+  font-size: 18px;
+}
+
+.imagem-central img {
+  width: 100%; /* A imagem ocupa toda a largura do container */
+  height: 100%; /* A imagem ocupa toda a altura do container */
+  object-fit: cover; /* Cobre o espaço do container mantendo a proporção da imagem */
+}
+
+.imagem-central-sobre {
+  text-align: center;
+}
+
+.imagem-central-sobre img {
+  display: inline-block;
+}
+
+.text-central-sobre {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.side-sobre {
+  background-color: #e9ecef; /* Cor de fundo cinza mais escuro */
+  padding: 40px;
+  border-radius: 15px;
+  margin-left: 70px;
+}
+
+.text-central-encarte {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Mudando a cor das setas de navegação do carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: red;
+}
+
+/* Alterando a cor das setas quando o usuário passa o mouse sobre elas */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: red;
+}
+
+.imagem-encarte {
+  width: 80%;  /* Largura do contêiner */
+  height: 70vh;  /* Altura do contêiner (80% da altura da tela) */
+  display: flex;
+  margin-left: 80px;
+  margin-bottom: 20px;
 }
