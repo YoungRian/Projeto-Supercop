@@ -51,4 +51,39 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Variveis para mudar e controlar o numero de paginas
+    let paginaAtual = 1;
+    const noticiasPorPagina = 5;
+
+    // Função para mudar de pagina
+    function mudarPagina(incremento) {
+        paginaAtual += incremento;
+
+        // Isso garante que a pagina não seja menor do que 1
+        if (paginaAtual < 1) {
+            paginaAtual = 1;
+        }
+
+        // Obtem todas as noticias
+        const noticias = document.querySelectorAll('.noticia');
+
+        // Calcula os indices das noticias que devem serem exibidas
+        const inicio = (paginaAtual - 1) * noticiasPorPagina;
+        const fim = paginaAtual * noticiasPorPagina;
+
+        // Oculta todas as noticias
+        noticia.forEach((noticia, index) => {
+            noticia.style.display = 'none';
+        });
+
+        //Exibe apenas as noticias da pagina atual
+        for (let i = inicio; i < fim && i < noticias.lenght; i++) {
+            noticias[i].style.display = 'block';
+        }
+    }
+
+    // Inicializar a página com as notícias da página 1
+    document.addEventListener('DOMContentLoaded', () => {
+        mudarPagina(0); // Chama a função para exibir a primeira página
+    })
 });

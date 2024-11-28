@@ -11344,3 +11344,23 @@ textarea {
   margin-left: 80px;
   margin-bottom: 20px;
 }
+
+.pagination {
+  display: inline;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.noticias-lista {
+  list-style-type: none;
+  padding: 0;
+}
+
+.noticia {
+  text-align: center;
+}
