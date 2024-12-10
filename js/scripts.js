@@ -50,40 +50,41 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+})
 
-    // Variveis para mudar e controlar o numero de paginas
-    let paginaAtual = 1;
-    const noticiasPorPagina = 5;
+let currentPage = 1;
+  const itemsPerPage = 3;
 
-    // Função para mudar de pagina
-    function mudarPagina(incremento) {
-        paginaAtual += incremento;
+  function displayItems() {
+    const items = document.querySelectorAll('#noticiasLista .noticia');
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
 
-        // Isso garante que a pagina não seja menor do que 1
-        if (paginaAtual < 1) {
-            paginaAtual = 1;
-        }
+    items.forEach((item, index) => {
+      if (index >= start && index < end) {
+        item.style.display = 'block'; // Exibe os itens da página atual
+      } else {
+        item.style.display = 'none'; // Oculta os itens que não pertencem à página atual
+      }
+    });
 
-        // Obtem todas as noticias
-        const noticias = document.querySelectorAll('.noticia');
+    // Habilita ou desabilita os botões de navegação
+    document.getElementById('prev-button').disabled = currentPage === 1;
+    document.getElementById('next-button').disabled = currentPage * itemsPerPage >= items.length;
+  }
 
-        // Calcula os indices das noticias que devem serem exibidas
-        const inicio = (paginaAtual - 1) * noticiasPorPagina;
-        const fim = paginaAtual * noticiasPorPagina;
-
-        // Oculta todas as noticias
-        noticia.forEach((noticia, index) => {
-            noticia.style.display = 'none';
-        });
-
-        //Exibe apenas as noticias da pagina atual
-        for (let i = inicio; i < fim && i < noticias.lenght; i++) {
-            noticias[i].style.display = 'block';
-        }
+  function changePage(direction) {
+    const items = document.querySelectorAll('#noticiasLista .noticia');
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+    
+    if (direction === 'prev' && currentPage > 1) {
+      currentPage--;
+    } else if (direction === 'next' && currentPage < totalPages) {
+      currentPage++;
     }
 
-    // Inicializar a página com as notícias da página 1
-    document.addEventListener('DOMContentLoaded', () => {
-        mudarPagina(0); // Chama a função para exibir a primeira página
-    })
-});
+    displayItems();
+  }
+
+  // Inicializa a página com os itens da primeira página
+  displayItems();

@@ -11346,7 +11346,7 @@ textarea {
 }
 
 .pagination {
-  display: inline;
+  display: inline-block;
   justify-content: center;
   text-align: center;
   padding: 10px 15px;
@@ -11356,11 +11356,47 @@ textarea {
   transition: background-color 0.3s ease;
 }
 
+.noticia {
+  text-align: center;
+  display: flex; /* Garante que o conteúdo dentro da notícia seja flexível */
+  justify-content: center; /* Centraliza o conteúdo */
+  align-items: center; /* Alinha verticalmente */
+  width: 100%; /* Permite que a largura da notícia ocupe toda a largura disponível */
+  min-width: 300px; /* Define uma largura mínima para evitar corte */
+  box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+}
+
+.noticia > div {
+  display: flex; /* Usar flex para garantir que os elementos se ajustem corretamente */
+  justify-content: center; /* Centraliza o conteúdo dentro do div */
+  align-items: center; /* Alinha verticalmente os itens dentro do div */
+  width: 100%;
+  max-width: 100%; /* Garante que o conteúdo dentro do div não ultrapasse a largura do quadro */
+  padding: 10px;
+  height: 100%;
+  box-sizing: border-box; /* Evita que padding e borda ultrapassem o limite do elemento */
+  overflow: hidden; /* Impede que o conteúdo ultrapasse o limite do quadro */
+}
+
 .noticias-lista {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espaço entre os itens */
+}
+
+ul.noticias-lista {
   list-style-type: none;
   padding: 0;
 }
 
-.noticia {
-  text-align: center;
+li.noticia {
+  display: block; /* Exibe os itens da lista */
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
 }
