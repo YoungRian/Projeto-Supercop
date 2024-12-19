@@ -294,4 +294,37 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const noticias = document.querySelectorAll('.noticia');
+          const itemsPerPage = 3;
+          const pagination = document.getElementById('pagination');
+          const pageInfo = document.getElementById('page-info');
+          const prevButton = document.getElementById('prev-button');
+          const nextButton = document.getElementById('next-button');
+          let currentPage = 1;
+          const totalPages = Math.ceil(noticias.length / itemsPerPage);
+
+          function showPage(page) {
+              noticias.forEach((noticia, index) => {
+                  noticia.style.display = (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) ? 'block' : 'none';
+              });
+              pageInfo.textContent = `Página ${page} de ${totalPages}`;
+              prevButton.disabled = page === 1;
+              nextButton.disabled = page === totalPages;
+          }
+
+          function changePage(direction) {
+              currentPage += direction === 'next' ? 1 : -1;
+              showPage(currentPage);
+          }
+
+          prevButton.addEventListener('click', () => changePage('prev'));
+          nextButton.addEventListener('click', () => changePage('next'));
+          showPage(currentPage);
+      });
+  </script>
+</body>
+</html>
 </html>
