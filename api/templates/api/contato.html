@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,12 +16,12 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-             <img src="assets/img/Logo Supercop.png" href="#page-top" alt="Logo Supercop" class="tamanho-logo"></a>
+             <img src="{% static 'assets/img/Logo Supercop.png' %}" href="#page-top" alt="Logo Supercop" class="tamanho-logo"></a>
             <div class="menu-tamanho">
                
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="margin-left: 20px;">
@@ -28,12 +30,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">INICIO</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="sobre.html">SOBRE</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="lojas.html">LOJAS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="momentos.html">MOMENTOS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="encarte.html">ENCARTE</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="contato.html">CONTATO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'home' %}">INICIO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'sobre' %}">SOBRE</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'lojas' %}">LOJAS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'momentos' %}">MOMENTOS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'encarte' %}">ENCARTE</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'contato' %}">CONTATO</a></li>
                     </ul>
                     <div class="d-flex social-media" >
                         <a class="btn btn-outline-light btn-social mx-1" href="#!" title="Whatsapp"><i class="fab fa-fw fa-whatsapp"></i></a>
@@ -54,27 +56,32 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="side-contact">
                         <h2 class="text-title-contact">ENVIE SUA MENSAGEM</h2>
-                        <div class="contact">
-                            <div>
-                                <label for="name">Nome</label>
-                                <input type="text" id="name" name="name" placeholder="Seu nome*" required>
-                            </div>
-                            <div>
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Seu e-mail*" required>
-                            </div>
-                            <div>
-                                <label for="contato">Telefone</label>
-                                <input type="tel" id="contato" name="contato" placeholder="Telefone para contato*" required>
-                            </div>
-                            <div>
-                                <label for="mensagem">Mensagem</label>
-                                <textarea name="mensagem" id="mensagem" placeholder="Insira sua mensagem*" rows="5" cols="40" required></textarea>
-                            </div>
-                            <button class="button" type="submit" aria-label="Enviar formulário de contato">Enviar</button>
-                        </div>
+                        <form method="post" action="{% url 'enviar_curriculo' %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                            
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            
+                            <label for="contato">Telefone</label>
+                            <input type="tel" id="contato" name="contato" required>
+                            
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" required></textarea>
+                            
+                            <!-- Novo campo para o upload de arquivo -->
+                            <label for="curriculo_file">Anexar Currículo (opcional)</label>
+                            <input type="file" id="curriculo_file" name="curriculo_file">
+                            
+                            <button type="submit">Enviar</button>
+                        </form>
+
+                    
                     </div>
                 </div>
+                
                    
 
                 <!-- Coluna para o texto ao lado -->
@@ -117,13 +124,13 @@
                     <!-- Footer Link Uteis-->
                     <div class="col-lg-4 col-md-6 col-sm-12" >
                         <h4 class="text-uppercase mb-4">Links Úteis</h4>
-                        <ul class="list-unstyled" style="text-align: left;">
-                            <li class="mb-3"><a href="index.html" class="footer">Início</a></li>
-                            <li class="mb-3"><a href="sobre.html" class="footer">Sobre</a></li>
-                            <li class="mb-3"><a href="lojas.html" class="footer">Lojas</a></li>
-                            <li class="mb-3"><a href="momentos.html" class="footer">Momentos</a></li>
-                            <li class="mb-3"><a href="encarte.html" class="footer">Encarte</a></li>
-                            <li class="mb-3"><a href="contato.html" class="footer">Contato</a></li>
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'home' %}">INICIO</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'sobre' %}">SOBRE</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'lojas' %}">LOJAS</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'momentos' %}">MOMENTOS</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'encarte' %}">ENCARTE</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'contato' %}">CONTATO</a></li>
                         </ul>
                     </div>
                     <!-- Footer Redes Sociais-->

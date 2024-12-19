@@ -57,19 +57,21 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates',  # Diretório de templates global
+            BASE_DIR / 'templates',  # Certifique-se de que o diretório de templates está correto
         ],
-        'APP_DIRS': True,  # Permite que Django busque templates nos apps
+        'APP_DIRS': True,  # Isso deve ser True para que Django encontre os templates dentro de apps
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static',  # Isso deve estar incluído
             ],
         },
     },
 ]
+
 
 
 WSGI_APPLICATION = 'config.wsgi.application'
@@ -108,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -121,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

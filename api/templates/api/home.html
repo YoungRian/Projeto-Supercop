@@ -1,6 +1,6 @@
-
-
 {% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,32 +10,35 @@
         <meta name="author" content="" />
         <title>Supercop</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/img/Logo Supercop.png" />
+
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/img' %}">
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+    
+        
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-             <img src="assets/img/Logo Supercop.png" href="#page-top" alt="Logo Supercop" class="tamanho-logo"></a>
-            <div class="menu-tamanho">
+             <img src="{% static 'assets/img/Logo Supercop.png' %}"alt="Logo Supercop" class="tamanho-logo"></a>
+            <div class="menu-tamanho">  
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="margin-left: 20px;">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">INICIO</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="sobre.html">SOBRE</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="lojas.html">LOJAS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="momentos.html">MOMENTOS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="encarte.html">ENCARTE</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="contato.html">CONTATO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'home' %}">INICIO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'sobre' %}">SOBRE</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'lojas' %}">LOJAS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'momentos' %}">MOMENTOS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'encarte' %}">ENCARTE</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'contato' %}">CONTATO</a></li>
                     </ul>
                     <div class="d-flex social-media" >
                         <a class="btn btn-outline-light btn-social mx-1" href="#!" title="Whatsapp"><i class="fab fa-fw fa-whatsapp"></i></a>
@@ -48,7 +51,7 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
            <div class="imagem-central">
-                <img src="assets/img/Supercop_topo-de-site_explosao-de-premios_2024.jpg" alt="imagem de uma super explosao de premios"></a>
+            <img src="{% static 'assets/img/Supercop_topo-de-site_explosao-de-premios_2024.jpg' %}"  alt="imagem de uma super explosao de premios"></a>
            </div>
         </header>
         <div class="text-center">
@@ -58,7 +61,7 @@
             <div class="product-content">
                 <div class="product-image">
                     <a>
-                        <img class="pic-product" src="assets/img/Flocao-de-Milho-Sao-Braz-500g.png" alt="Imagem de um pacote de 500g de Flocão de Milho São Braz">
+                        <img class="pic-product" src="{% static 'assets/img/Flocao-de-Milho-Sao-Braz-500g.png' %}" alt="Imagem de um pacote de 500g de Flocão de Milho São Braz">
                         <h5>Flocão de Milho São Braz 500g</h5>
                     </a>
                     <div class="price">R$16,00</div>
@@ -67,7 +70,7 @@
             <div class="product-content">
                 <div class="product-image">
                     <a>
-                        <img class="pic-product" src="assets/img/Margarina-Primor-com-Sal-60-de-Gordura-3Kg.png" alt="Imagem de uma margarina de 3kg da marca Primor com Sal e 60 porcento de gordura">
+                        <img class="pic-product" src="{% static 'assets/img/Margarina-Primor-com-Sal-60-de-Gordura-3Kg.png' %}" alt="Imagem de uma margarina de 3kg da marca Primor com Sal e 60 porcento de gordura">
                         <h5>Margarina Primor com Sal 60% de Gordura 3Kg</h5>
                     </a>
                     <div class="price">R$22,99</div>
@@ -76,7 +79,7 @@
             <div class="product-content">
                 <div class="product-image">
                     <a>
-                        <img class="pic-product" src="assets/img/Feijao-Carioca-DuBom-1Kg.png" alt="Imagem de um pacote de Feijao carioca da Dubom de 1kg">
+                        <img class="pic-product" src="{% static 'assets/img/Feijao-Carioca-DuBom-1Kg.png' %}" alt="Imagem de um pacote de Feijao carioca da Dubom de 1kg">
                         <h5>Feijão Carioca DuBom 1Kg</h5>
                     </a>
                     <div class="price">R$4,99</div>
@@ -85,7 +88,7 @@
             <div class="product-content">
                 <div class="product-image">
                     <a>
-                        <img class="pic-product" src="assets/img/Leite-UHT-Integral-Natville-1L-363x1024.png" alt="Imagem de uma caixa de leite UHT da Natville de 1 litro">
+                        <img class="pic-product" src="{% static 'assets/img/Leite-UHT-Integral-Natville-1L-363x1024.png' %}" alt="Imagem de uma caixa de leite UHT da Natville de 1 litro">
                         <h5>Leite UHT Natville 1L</h5>
                     </a>
                     <div class="price">R$5,49</div>
@@ -118,12 +121,12 @@
                     <div class="col-lg-4 col-md-6 col-sm-12" >
                         <h4 class="text-uppercase mb-4">Links Úteis</h4>
                         <ul class="list-unstyled" style="text-align: left;">
-                            <li class="mb-3"><a href="index.html" class="footer">Início</a></li>
-                            <li class="mb-3"><a href="sobre.html" class="footer">Sobre</a></li>
-                            <li class="mb-3"><a href="lojas.html" class="footer">Lojas</a></li>
-                            <li class="mb-3"><a href="momentos.html" class="footer">Momentos</a></li>
-                            <li class="mb-3"><a href="encarte.html" class="footer">Encarte</a></li>
-                            <li class="mb-3"><a href="contato.html" class="footer">Contato</a></li>
+                            <li class="mb-3"><a href="{% url 'home' %}" class="footer">Início</a></li>
+                            <li class="mb-3"><a href="{% url 'sobre' %}" class="footer">Sobre</a></li>
+                            <li class="mb-3"><a href="{% url 'lojas' %}" class="footer">Lojas</a></li>
+                            <li class="mb-3"><a href="{% url 'momentos' %}" class="footer">Momentos</a></li>
+                            <li class="mb-3"><a href="{% url 'encarte' %}" class="footer">Encarte</a></li>
+                            <li class="mb-3"><a href="{% url 'contato' %}" class="footer">Contato</a></li>
                         </ul>
                     </div>
                     <!-- Footer Redes Sociais-->
